@@ -1,66 +1,65 @@
-import { ApiProperty } from "@nestjs/swagger"
+import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger"
 import { IsNotEmpty, IsNumber } from "class-validator"
 import { Employee } from "src/employee/entities/employee.entity"
 
 export class CreateAttendanceDto {
-    @ApiProperty()
-    employee: Employee
+    @ApiPropertyOptional()
+    employee ?: Employee
     
-    @ApiProperty()
+    @ApiPropertyOptional()
     attendance_date ?: Date
     
-    @ApiProperty()
+    @ApiPropertyOptional()
     // @IsNumber()
     attendance_type ?: number
     
-    @ApiProperty()
+    @ApiPropertyOptional()
     time_check_in ?: Date
     
-    @ApiProperty()
+    @ApiPropertyOptional()
     time_check_out ?: Date
     
-    @ApiProperty()
+    @ApiPropertyOptional()
     time_start_for_break ?: Date
     
-    @ApiProperty()
+    @ApiPropertyOptional()
     time_end_for_break ?: Date
     
-    @ApiProperty()
+    @ApiPropertyOptional()
     time_start_for_left ?: Date
     
-    @ApiProperty()
+    @ApiPropertyOptional()
     time_end_for_left ?: Date
     
-    @ApiProperty()
+    @ApiPropertyOptional()
     time_arrive_home ?: Date
     
-    @ApiProperty()
+    @ApiPropertyOptional()
     // @IsNumber()
     overtime ?: number
     
-    @ApiProperty()
+    @ApiPropertyOptional()
     // @IsNumber()
     work_duration ?: number
     
-    @ApiProperty()
+    @ApiPropertyOptional()
     // @IsNumber()
     early_overtime ?: number
     
-    @ApiProperty()
+    @ApiPropertyOptional()
     // @IsNumber()
     total_leave ?: string
     
-    @ApiProperty()
+    @ApiPropertyOptional()
     week_of_day ?: number
     
-    @ApiProperty({description : '1 = ya, 0 = tidak'})
+    @ApiPropertyOptional({description : '1 = ya, 0 = tidak'})
     isOvertime ?: number
     
-    @ApiProperty({description : '1 = ya, 0 = tidak'})
+    @ApiPropertyOptional({description : '1 = ya, 0 = tidak'})
     is_early_overtime ?: number
 }
 export class CreateManyAttendanceDto{
-    @ApiProperty()
-    @IsNotEmpty({ always: true })
-    bulk: CreateAttendanceDto[];
+    @ApiPropertyOptional()
+    bulk?: CreateAttendanceDto[];
 }

@@ -14,12 +14,12 @@ export class Attendance extends BasicEntity {
     attendance_type ?: number
     
     @ApiProperty()
-    @Column({nullable : false, type : 'time'})
-    time_check_in : string
+    @Column({nullable : true, type : 'time'})
+    time_check_in ?: string
     
     @ApiProperty()
-    @Column({nullable : false, type : 'time'})
-    time_check_out : string
+    @Column({nullable : true, type : 'time'})
+    time_check_out ?: string
     
     @ApiProperty()
     @Column({nullable : true, type : 'time'})

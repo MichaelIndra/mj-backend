@@ -10,4 +10,18 @@ export class AttendanceService extends TypeOrmCrudService<Attendance> {
   constructor(@InjectRepository(Attendance) repo){
     super(repo)
   }
+  
+  
+  async delateAll(){
+    return await  this.repo.query(`DELETE FROM Attendance;`);
+    
+  }
+  
+  // async customCreateMany(data : any)  {
+  //   console.log(data)
+  //   const create = await this.repo.create(data)
+  //   return await this.repo.save(create)
+  // }
+  
+  
 }
